@@ -10,7 +10,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:9000/login", { email, password })
+    axios.post("https://mern-auth-crud-3.onrender.com/login", { email, password })
       .then((response) => {
         console.log(response);
         navigate("/products");
