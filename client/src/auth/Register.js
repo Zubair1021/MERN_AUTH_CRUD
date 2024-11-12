@@ -15,7 +15,7 @@ const Register = () => {
     console.log(username, email, password);
 
     axios
-      .post("http://localhost:9000/register", { username, email, password })
+      .post("https://mern-auth-crud-3.onrender.com/register", { username, email, password })
       .then((response) => {
         console.log(response);
         navigate("/login");
