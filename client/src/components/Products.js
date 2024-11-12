@@ -30,7 +30,7 @@ const Products = () => {
         price: productData.price,
         category: productData.category,
       };
-      const response = await axios.post('http://localhost:9000/products/addProduct', productPayload);
+      const response = await axios.post('https://mern-auth-crud-3.onrender.com/products/addProduct', productPayload);
       console.log('Product added:', response.data);
       alert('Product added successfully');
     } catch (error) {
