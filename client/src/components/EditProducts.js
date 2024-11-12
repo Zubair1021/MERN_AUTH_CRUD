@@ -17,7 +17,7 @@ const EditProducts = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:9000/products/getProductById/${id}`);
+        const response = await axios.get(`https://mern-auth-crud-3.onrender.com/products/getProductById/${id}`);
         setProduct(response.data); // Set the product data to state
       } catch (error) {
         console.error('Error fetching product details:', error);
@@ -39,7 +39,7 @@ const EditProducts = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:9000/products/updateProduct/${id}`, product);
+      await axios.put(`https://mern-auth-crud-3.onrender.com/products/updateProduct/${id}`, product);
       alert('Product updated successfully');
       navigate('/showproducts'); 
     } catch (error) {
