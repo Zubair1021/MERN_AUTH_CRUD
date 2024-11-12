@@ -11,7 +11,7 @@ const ShowProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:9000/products/getProducts');
+        const response = await axios.get('https://mern-auth-crud-3.onrender.com/products/getProducts');
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -23,7 +23,7 @@ const ShowProducts = () => {
   // Handle Delete
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:9000/products/deleteProduct/${id}`);
+      await axios.delete(`https://mern-auth-crud-3.onrender.com/products/deleteProduct/${id}`);
       setProducts(products.filter(product => product._id !== id));
       alert('Product deleted successfully');
     } catch (error) {
