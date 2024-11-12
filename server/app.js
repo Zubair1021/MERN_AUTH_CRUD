@@ -18,7 +18,7 @@ app.use("/", mainRouter);
 app.use("/products", productRoutes); 
 
 // Database Connection
-mongoose.connect(process.env.DB, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://zubairjaved1014:test12345@cluster0.lebll.mongodb.net/", { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("DB connection established"))
     .catch((err) => console.log("DB connection error:", err));
 
