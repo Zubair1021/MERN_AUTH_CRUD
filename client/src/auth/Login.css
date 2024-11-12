@@ -1,0 +1,191 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #34d399, #3b82f6);
+  background-size: 400% 400%; /* Enables the gradient animation */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: gradientAnimation 15s ease infinite; /* Infinite gradient background animation */
+}
+
+/* Keyframes for the gradient animation */
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* Animation for smooth fade-in effect */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.login-box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out; /* Fade-in animation for the login box */
+}
+
+/* Login Box Title */
+.login-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #34d399;
+  margin-bottom: 20px;
+}
+
+/* Form Styles */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #374151;
+  text-align: left;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added shadow transition */
+}
+
+/* Glowing effect on focus */
+.input-field:focus {
+  border-color: #34d399;
+  outline: none;
+  box-shadow: 0 0 8px rgba(52, 211, 153, 0.5); /* Add a glow effect */
+}
+
+.login-btn {
+  background-color: #34d399;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform transition */
+  margin-top: 10px;
+}
+
+/* Button bounce animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-10px);
+  }
+  60% {
+      transform: translateY(-5px);
+  }
+}
+
+.login-btn:hover {
+  background-color: #059669;
+  animation: bounce 0.5s; /* Bounce effect on hover */
+}
+
+.register-link {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.link {
+  color: #34d399;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 768px) {
+  .login-box {
+      width: 90%; /* Reduce the width of the login box */
+      padding: 25px; /* Reduce padding for small screens */
+  }
+
+  .login-title {
+      font-size: 1.5rem; /* Smaller title size */
+  }
+
+  .input-field {
+      font-size: 0.9rem; /* Smaller font size for inputs */
+      padding: 10px; /* Reduce padding */
+  }
+
+  .login-btn {
+      font-size: 0.9rem; /* Smaller font size for button */
+      padding: 10px; /* Reduce button padding */
+  }
+
+  .register-link {
+      font-size: 0.8rem; /* Smaller text for register link */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box {
+      width: 95%; /* Make the box even smaller on very small screens */
+      padding: 20px; /* Reduce padding further */
+  }
+
+  .login-title {
+      font-size: 1.2rem; /* Even smaller title */
+  }
+
+  .input-field {
+      font-size: 0.85rem; /* Even smaller font for inputs */
+  }
+
+  .login-btn {
+      font-size: 0.85rem; /* Even smaller button text */
+      padding: 8px; /* Even smaller padding */
+  }
+}

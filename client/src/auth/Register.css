@@ -1,0 +1,193 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #3b82f6, #34d399);
+  background-size: 400% 400%;  /* To enable smooth transition between colors */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  animation: gradientAnimation 15s ease infinite;  /* Infinite background animation */
+}
+
+/* Keyframes for the gradient animation */
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+/* Animation for smooth fade-in effect */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Bounce animation for the button */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-10px);
+  }
+  60% {
+      transform: translateY(-5px);
+  }
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.register-box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.register-box:hover {
+  transform: translateY(-5px);
+}
+
+.register-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #34d399;
+  margin-bottom: 20px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form input fields animation */
+.input-field {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Glowing effect when form field is focused */
+.input-field:focus {
+  border-color: #34d399;
+  box-shadow: 0 0 8px rgba(52, 211, 153, 0.5);
+  outline: none;
+}
+
+/* Register button animation */
+#register-btn {
+  background-color: #34d399;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  animation: bounce 2s infinite;
+}
+
+#register-btn:hover {
+  background-color: #059669;
+  animation: none;
+}
+
+/* Login link styles */
+.login-link {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.link {
+  color: #34d399;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Underline animation for the link */
+.link:hover {
+  text-decoration: underline;
+  color: #059669;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .register-box {
+      width: 90%; /* Make the box width smaller on medium screens */
+      padding: 30px;
+  }
+
+  .register-title {
+      font-size: 1.8rem; /* Slightly smaller title */
+  }
+
+  .input-field {
+      padding: 10px; /* Reduced padding for input fields */
+  }
+
+  #register-btn {
+      padding: 10px;
+      font-size: 0.9rem; /* Smaller button text */
+  }
+}
+
+@media (max-width: 480px) {
+  .register-box {
+      width: 95%; /* Make the box width take up almost full screen */
+      padding: 20px;
+  }
+
+  .register-title {
+      font-size: 1.5rem; /* Make title even smaller for very small screens */
+  }
+
+  .input-field {
+      padding: 8px; /* Smaller input fields */
+  }
+
+  #register-btn {
+      padding: 10px;
+      font-size: 0.9rem; /* Make button smaller */
+  }
+
+  .login-link {
+      font-size: 0.8rem; /* Smaller link text */
+  }
+}
